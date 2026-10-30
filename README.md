@@ -1,4 +1,4 @@
-# 赤灯完全汉化补丁 v1.0.0
+# 赤灯 Steam 完全汉化补丁 v1.0.0
 
 [下载完整补丁 v1.0.0（含简繁攻略）](https://github.com/Haccayukie/Akaaka_Steam_Patch/releases/download/v1.0.0/Akaaka_Steam_Patch_v1.0.0.zip) · [发布页与校验文件](https://github.com/Haccayukie/Akaaka_Steam_Patch/releases/tag/v1.0.0)
 
