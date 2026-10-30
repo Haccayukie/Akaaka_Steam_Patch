@@ -51,3 +51,8 @@ WINEDLLOVERRIDES="winhttp.dll=n,b" %command%
 补丁不含游戏本体。完整安装注意事项请阅读“使用说明.txt”。
 
 PatchData 为安装组件文件夹，请完整保留，无须打开或单独运行其中的文件。
+
+## 使用问题及意见反馈
+
+- 表单：[提交反馈](https://tally.so/r/q55Y8d)
+- 邮箱：[haccaworksfans@gmail.com](mailto:haccaworksfans@gmail.com)
