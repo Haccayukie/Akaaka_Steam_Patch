@@ -1,5 +1,30 @@
 # 赤灯完全汉化补丁 v1.0.0
 
+[下载完整补丁 v1.0.0（含简繁攻略）](https://github.com/Haccayukie/Akaaka_Steam_Patch/releases/download/v1.0.0/Akaaka_Steam_Patch_v1.0.0.zip) · [发布页与校验文件](https://github.com/Haccayukie/Akaaka_Steam_Patch/releases/tag/v1.0.0)
+
+## 下载包内文件
+
+```text
+Akaaka_Steam_Patch_v1.0.0/
+├─ PatchData/
+│  ├─ payload/
+│  ├─ install.sh
+│  ├─ installer.ps1
+│  ├─ installer.py
+│  ├─ manifest.json
+├─ 游戏攻略/
+│  ├─ 简体/
+│  ├─ 繁體/
+├─ 【SteamDeck掌机用】1_安装补丁_v1.0.0.desktop
+├─ 【SteamDeck掌机用】2_还原补丁_v1.0.0.desktop
+├─ 【WindowsPC用】1_Steam安装补丁_v1.0.0.cmd
+├─ 【WindowsPC用】2_Steam还原补丁_v1.0.0.cmd
+├─ 使用说明.txt
+├─ 赤灯汉化成员列表.png
+```
+
+[查看完整文件清单](FILES.md)。以下是下载包内容的预览；安装请下载并完整解压上方补丁包。
+
 适用于《赤红灯火妖魅行 缀》Steam 版，包含简体中文与繁体中文。Windows 与 SteamDeck 共用一套补丁文件。
 
 ## Windows
@@ -25,8 +50,3 @@ WINEDLLOVERRIDES="winhttp.dll=n,b" %command%
 补丁不含游戏本体。完整安装注意事项请阅读“使用说明.txt”。
 
 PatchData 为安装组件文件夹，请完整保留，无须打开或单独运行其中的文件。
-
-
-## 下载
-
-请从 [正式发布页](https://github.com/Haccayukie/Akaaka_Steam_Patch/releases/latest) 下载完整补丁包，勿使用 Source code 下载代替补丁。
