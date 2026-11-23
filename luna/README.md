@@ -128,6 +128,14 @@ Luna 的基础操作和 OCR 详细设置可参考：[Flamecho《LunaTranslator �
 
 GitHub 暂时连不上时，会继续使用已经下载好的版本。首次安装需要联网。
 
+## 6．卸载
+
+先完全退出 Luna，再双击 **Luna 文件夹里的 Uninstall_Akaaka_Luna_OCR.cmd**，按提示确认卸载。
+
+找不到这个文件时，也可以从 **[下载页](https://github.com/Haccayukie/Akaaka_Steam_Patch/releases/tag/luna-ocr-v1)** 下载 **Akaaka_NS_Luna_OCR_Uninstall.cmd**，双击运行。
+
+卸载会删除赤灯预翻译的专用设置、译文和启动入口，保留 Luna 本体、原来的设置及 OCR 模型。以后需要使用时，重新运行安装 CMD 即可。
+
 ## 遇到问题，先看这里
 
 | 看到的情况 | 先做什么 |

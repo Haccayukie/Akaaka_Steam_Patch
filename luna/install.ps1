@@ -85,6 +85,8 @@ $launcherTemporary = Join-Path $stateDirectory 'launch.ps1.download'
 Fetch-File ($base + 'launch.ps1') $launcherTemporary
 Move-Item -LiteralPath $launcherTemporary -Destination (Join-Path $stateDirectory 'launch.ps1') -Force
 Save-Json (Join-Path $stateDirectory 'installation.json') @{ luna_directory = $LunaDirectory }
+Fetch-File ($base + 'uninstall.ps1') (Join-Path $stateDirectory 'uninstall.ps1')
+Fetch-File ($base + 'uninstall.cmd') (Join-Path $LunaDirectory 'Uninstall_Akaaka_Luna_OCR.cmd')
 
 $folderLauncher = "@echo off`r`ncd /d `"%~dp0`"`r`nstart `"`" `"%~dp0LunaTranslator.exe`" --userconfig=userconfig_akaaka`r`n"
 [IO.File]::WriteAllText((Join-Path $LunaDirectory 'Start_Akaaka_Luna_OCR.cmd'), $folderLauncher, [Text.Encoding]::ASCII)

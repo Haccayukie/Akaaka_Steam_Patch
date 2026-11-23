@@ -6,6 +6,8 @@ on:
       - 'luna/.gitattributes'
       - 'luna/install.ps1'
       - 'luna/launch.ps1'
+      - 'luna/uninstall.cmd'
+      - 'luna/uninstall.ps1'
       - 'luna/tests/test_install.ps1'
       - '.github/workflows/luna-ocr-release.yml'
   workflow_dispatch:
@@ -28,7 +30,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Prepare download
-        run: cp luna/install.cmd Akaaka_NS_Luna_OCR_Install.cmd
+        run: |
+          cp luna/install.cmd Akaaka_NS_Luna_OCR_Install.cmd
+          cp luna/uninstall.cmd Akaaka_NS_Luna_OCR_Uninstall.cmd
       - name: Publish installer
         env:
           GH_TOKEN: ${{ github.token }}
@@ -39,6 +43,8 @@ jobs:
           1. 在下方 Assets 下载 **Akaaka_NS_Luna_OCR_Install.cmd**。
           2. 完全退出 Luna，双击下载的文件，按提示选择 **LunaTranslator.exe**。
           3. 以后继续双击下载的 CMD，或使用 Luna 文件夹里的 Start_Akaaka_Luna_OCR.cmd。桌面快捷方式也可使用。
+
+          卸载：先完全退出 Luna，再双击 Luna 文件夹里的 **Uninstall_Akaaka_Luna_OCR.cmd**；也可在下方下载 **Akaaka_NS_Luna_OCR_Uninstall.cmd**。
 
           无需解压。首次安装需要联网，日常启动会自动检查译文更新。
 
@@ -51,4 +57,4 @@ jobs:
           else
             gh release create luna-ocr-v1 --target "$GITHUB_SHA" --title "赤灯 NS · Luna OCR 投屏翻译（试用版）" --notes-file release-notes.md --prerelease --latest=false
           fi
-          gh release upload luna-ocr-v1 Akaaka_NS_Luna_OCR_Install.cmd --clobber
+          gh release upload luna-ocr-v1 Akaaka_NS_Luna_OCR_Install.cmd Akaaka_NS_Luna_OCR_Uninstall.cmd --clobber
