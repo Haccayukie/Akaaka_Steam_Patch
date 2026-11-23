@@ -1,0 +1,43 @@
+name: Publish NS Luna OCR installer
+on:
+  push:
+    paths:
+      - 'luna/install.cmd'
+      - 'luna/install.ps1'
+      - '.github/workflows/luna-ocr-release.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: luna-ocr-installer-release
+  cancel-in-progress: false
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare download
+        run: cp luna/install.cmd Akaaka_NS_Luna_OCR_Install.cmd
+      - name: Publish installer
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cat > release-notes.md <<'EOF'
+          用于 NS 实机的采集卡投屏 OCR 翻译。Steam 版请下载另一个 Steam 汉化补丁。
+
+          1. 在下方 Assets 下载 **Akaaka_NS_Luna_OCR_Install.cmd**。
+          2. 完全退出 Luna，双击下载的文件，按提示选择 **LunaTranslator.exe**。
+          3. 以后从桌面的“赤灯预翻译”启动。
+
+          无需解压。首次安装需要联网，日常启动会自动检查译文更新。
+
+          [图文使用说明](https://github.com/Haccayukie/Akaaka_Steam_Patch/blob/main/luna/README.md)
+
+          请下载上面命名的 .cmd 文件；下方 Source code 并非安装文件。
+          EOF
+          if gh release view luna-ocr-v1 >/dev/null 2>&1; then
+            gh release edit luna-ocr-v1 --title "赤灯 NS · Luna OCR 投屏翻译（试用版）" --notes-file release-notes.md --prerelease --latest=false
+          else
+            gh release create luna-ocr-v1 --target "$GITHUB_SHA" --title "赤灯 NS · Luna OCR 投屏翻译（试用版）" --notes-file release-notes.md --prerelease --latest=false
+          fi
+          gh release upload luna-ocr-v1 Akaaka_NS_Luna_OCR_Install.cmd --clobber

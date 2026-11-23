@@ -24,15 +24,13 @@ Luna 的基础操作和 OCR 详细设置可参考：[Flamecho《LunaTranslator �
 
 ## 2．安装赤灯预翻译
 
-1. 打开 [安装入口页面](https://github.com/Haccayukie/Akaaka_Steam_Patch/blob/main/luna/install.cmd)。
-2. 点击代码框右上方的**下载图标**，鼠标停上去会显示 **Download raw file**。下载得到的文件名是 **install.cmd**。
-3. 完全退出正在运行的 Luna，然后双击下载好的 **install.cmd**。
-4. 出现选择文件的窗口后，找到第 1 步解压的 Luna 文件夹，选中 **LunaTranslator.exe**，点击“打开”。
+1. 打开 **[NS Luna OCR 下载页](https://github.com/Haccayukie/Akaaka_Steam_Patch/releases/tag/luna-ocr-v1)**。
+2. 在页面下方 **Assets（资源）**中下载 **Akaaka_NS_Luna_OCR_Install.cmd**。**不用解压，也不用下载 Source code。**
+3. 完全退出正在运行的 Luna，双击下载好的 **Akaaka_NS_Luna_OCR_Install.cmd**。
+4. 出现选择文件的窗口后，找到 Luna 文件夹，选中 **LunaTranslator.exe**，点击“打开”。
 5. 等下载和安装结束。电脑桌面会出现 **“赤灯预翻译”** 图标，Luna 也会自动打开。
 
-**看到桌面图标，就完成安装了。** 如果安装后窗口没有自动出现，双击桌面的“赤灯预翻译”。
-
-如果下载链接打开的是一页代码，可以右键 [这个链接](https://raw.githubusercontent.com/Haccayukie/Akaaka_Steam_Patch/main/luna/install.cmd)，选择“链接另存为”，文件名保留 **install.cmd**。如果文件名变成 **install.cmd.txt**，请改回 **install.cmd**。
+**看到桌面图标，就完成安装了。** 如果窗口没有自动出现，双击桌面的“赤灯预翻译”。以后使用桌面图标启动即可，不需要每次重新下载安装。
 
 ## 3．第一次使用，按这四步设置
 
