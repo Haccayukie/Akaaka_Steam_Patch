@@ -1,4 +1,4 @@
-﻿param([string]$LunaDirectory, [switch]$NoLaunch)
+﻿param([string]$LunaDirectory, [switch]$NoLaunch, [switch]$NoDesktopShortcut)
 $ErrorActionPreference = 'Stop'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $base = 'https://raw.githubusercontent.com/Haccayukie/Akaaka_Steam_Patch/main/luna/'
@@ -79,14 +79,32 @@ if (-not $config.PSObject.Properties['tgtlang4'] -or $config.tgtlang4 -notin @('
 }
 Save-Json $configPath $config
 
-$shell = New-Object -ComObject WScript.Shell
-$shortcut = $shell.CreateShortcut((Join-Path ([Environment]::GetFolderPath('Desktop')) '赤灯预翻译.lnk'))
-$shortcut.TargetPath = $exe
-$shortcut.Arguments = '--userconfig=userconfig_akaaka'
-$shortcut.WorkingDirectory = $LunaDirectory
-$shortcut.Save()
-Write-Host '安装完成。以后使用桌面的“赤灯预翻译”打开。'
-Write-Host '源语言、目标语言、OCR 和显示样式都在 Luna 原有设置里调整。'
+$stateDirectory = Join-Path $env:LOCALAPPDATA 'AkaakaLunaOCR'
+New-Item -ItemType Directory -Path $stateDirectory -Force | Out-Null
+$launcherTemporary = Join-Path $stateDirectory 'launch.ps1.download'
+Fetch-File ($base + 'launch.ps1') $launcherTemporary
+Move-Item -LiteralPath $launcherTemporary -Destination (Join-Path $stateDirectory 'launch.ps1') -Force
+Save-Json (Join-Path $stateDirectory 'installation.json') @{ luna_directory = $LunaDirectory }
+
+$folderLauncher = "@echo off`r`ncd /d `"%~dp0`"`r`nstart `"`" `"%~dp0LunaTranslator.exe`" --userconfig=userconfig_akaaka`r`n"
+[IO.File]::WriteAllText((Join-Path $LunaDirectory 'Start_Akaaka_Luna_OCR.cmd'), $folderLauncher, [Text.Encoding]::ASCII)
+if (-not $NoDesktopShortcut) {
+    try {
+        $shell = New-Object -ComObject WScript.Shell
+        $shortcutPath = Join-Path ([Environment]::GetFolderPath('Desktop')) '赤灯预翻译.lnk'
+        $shortcut = $shell.CreateShortcut($shortcutPath)
+        $shortcut.TargetPath = $exe
+        $shortcut.Arguments = '--userconfig=userconfig_akaaka'
+        $shortcut.WorkingDirectory = $LunaDirectory
+        $shortcut.Save()
+        Write-Host ('已创建桌面入口：' + $shortcutPath)
+    } catch {
+        Write-Warning ('桌面入口未创建：' + $_.Exception.Message)
+    }
+}
+Write-Host '安装完成。以后可双击这次下载的 CMD，或使用桌面入口。'
+Write-Host ('也可双击 Luna 文件夹里的：' + (Join-Path $LunaDirectory 'Start_Akaaka_Luna_OCR.cmd'))
+Write-Host '源语言、目标语言、OCR 和显示方式都在 Luna 设置里调整。'
 if (-not $NoLaunch) {
     Start-Process -FilePath $exe -ArgumentList '--userconfig=userconfig_akaaka' -WorkingDirectory $LunaDirectory -WindowStyle Hidden
 }

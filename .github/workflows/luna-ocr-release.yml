@@ -4,6 +4,8 @@ on:
     paths:
       - 'luna/install.cmd'
       - 'luna/install.ps1'
+      - 'luna/launch.ps1'
+      - 'luna/tests/test_install.ps1'
       - '.github/workflows/luna-ocr-release.yml'
   workflow_dispatch:
 permissions:
@@ -12,7 +14,15 @@ concurrency:
   group: luna-ocr-installer-release
   cancel-in-progress: false
 jobs:
+  test-installation:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify installation and launch paths
+        shell: powershell
+        run: ./luna/tests/test_install.ps1
   release:
+    needs: test-installation
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,7 +37,7 @@ jobs:
 
           1. 在下方 Assets 下载 **Akaaka_NS_Luna_OCR_Install.cmd**。
           2. 完全退出 Luna，双击下载的文件，按提示选择 **LunaTranslator.exe**。
-          3. 以后从桌面的“赤灯预翻译”启动。
+          3. 以后继续双击下载的 CMD，或使用 Luna 文件夹里的 Start_Akaaka_Luna_OCR.cmd。桌面快捷方式也可使用。
 
           无需解压。首次安装需要联网，日常启动会自动检查译文更新。
 
