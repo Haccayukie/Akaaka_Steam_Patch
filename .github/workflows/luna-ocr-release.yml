@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'luna/install.cmd'
+      - 'luna/.gitattributes'
       - 'luna/install.ps1'
       - 'luna/launch.ps1'
       - 'luna/tests/test_install.ps1'
