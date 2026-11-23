@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "version": "v1-94449942c49cbe4f",
+  "records": 20722,
+  "bootstrap_sha256": "f4f48d6c0182b73c5162ec50b7076dd927aed0c08a89c053729483d488dc1135",
+  "files": {
+    "engine.py": {
+      "path": "releases/v1-94449942c49cbe4f/engine.py",
+      "sha256": "1c41f7a88faca0280f069e0f437c8e24662dc2f5c754b24b474cddb3e6a1edd2"
+    },
+    "data.json.gz": {
+      "path": "releases/v1-94449942c49cbe4f/data.json.gz",
+      "sha256": "695cf5fd589d1d0dd1b5174f05d413da4b06974536badc7f1496a0d759d25d74"
+    },
+    "rules.json": {
+      "path": "releases/v1-94449942c49cbe4f/rules.json",
+      "sha256": "e2a968d8d5420179672ac0936496ed49ca0aee9d47dfce4ddefff7edb6f1524a"
+    }
+  }
+}

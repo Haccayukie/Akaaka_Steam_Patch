@@ -56,3 +56,8 @@ PatchData 为安装组件文件夹，请完整保留，无须打开或单独运�
 
 - 表单：[提交反馈](https://tally.so/r/q55Y8d)
 - 邮箱：[haccaworksfans@gmail.com](mailto:haccaworksfans@gmail.com)
+
+## NS 采集卡投屏与 OCR 预翻译
+
+[安装与使用说明](luna/README.md)。日文、官方简中和官方繁中均可匹配到民间汉化定稿，支持简繁输出。首次安装后从桌面入口打开，文本和匹配规则会从本仓库自动更新。使用 Luna 原生自定义接口，不覆盖官方 `rengong.py`。
+

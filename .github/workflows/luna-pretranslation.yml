@@ -1,0 +1,33 @@
+name: Build Luna pretranslation update
+on:
+  push:
+    paths:
+      - 'luna/runtime/**'
+      - 'luna/selfbuild.py'
+      - 'luna/maintainer/**'
+      - 'luna/tests/**'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: luna-pretranslation-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m unittest discover -s luna/tests -v
+      - run: python luna/maintainer/build.py
+      - name: Publish version manifest
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add luna/manifest.json luna/releases
+          if ! git diff --cached --quiet; then
+            git commit -m 'Publish Luna pretranslation update'
+            git push
+          fi
