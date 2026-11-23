@@ -24,3 +24,7 @@ Rename-Item -LiteralPath (Join-Path $directory 'LunaTranslator.exe') -NewName 'm
 & powershell.exe -NoProfile -File $launcher -StateDirectory $state -NoLaunch
 if ($LASTEXITCODE -ne 2) { throw 'Moved executable did not request setup' }
 Write-Host 'PASS: installation, cached launch, folder launch, missing state, moved executable'
+# The last child intentionally returns 2 for a moved executable. Do not let
+# GitHub's PowerShell wrapper treat that expected result as the test outcome.
+$global:LASTEXITCODE = 0
+exit 0
