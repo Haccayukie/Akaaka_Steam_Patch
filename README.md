@@ -1,4 +1,15 @@
-# 赤灯 Steam 完全汉化补丁 v1.0.0
+# 赤灯汉化：Steam 补丁与 NS 投屏翻译
+
+## 按游玩平台选择
+
+| 你玩的版本 | 使用哪一种 | 使用方式 |
+|---|---|---|
+| **Steam 版（Windows／Steam Deck）** | **Steam 完全汉化补丁 v1.0.0** | 下载下方补丁包，安装到 Steam 游戏目录 |
+| **NS 版（实机）** | **[Luna OCR 投屏翻译](luna/README.md)**（`luna` 文件夹） | 通过采集卡和 OBS 显示游戏画面，再用 Luna 识别文字、显示汉化组译文 |
+
+**Steam 补丁适用于 Steam 版；NS 版请使用 Luna OCR 投屏翻译。**
+
+## Steam 完全汉化补丁 v1.0.0
 
 [下载完整补丁 v1.0.0（含简繁攻略）](https://github.com/Haccayukie/Akaaka_Steam_Patch/releases/download/v1.0.0/Akaaka_Steam_Patch_v1.0.0.zip) · [发布页与校验文件](https://github.com/Haccayukie/Akaaka_Steam_Patch/releases/tag/v1.0.0)
 
@@ -57,7 +68,8 @@ PatchData 为安装组件文件夹，请完整保留，无须打开或单独运�
 - 表单：[提交反馈](https://tally.so/r/q55Y8d)
 - 邮箱：[haccaworksfans@gmail.com](mailto:haccaworksfans@gmail.com)
 
-## NS 采集卡投屏与 OCR 预翻译
+## Luna OCR：NS 实机采集卡投屏翻译
 
-[安装与使用说明](luna/README.md)。日文、官方简中和官方繁中均可匹配到民间汉化定稿，支持简繁输出。首次安装后从桌面入口打开，文本和匹配规则会从本仓库自动更新。使用 Luna 原生自定义接口，不覆盖官方 `rengong.py`。
+进入 **[luna 文件夹 · Luna OCR 安装与使用说明](luna/README.md)**。
 
+NS 主机通过采集卡在电脑上投屏，可配合 OBS 使用。Luna 识别游戏画面中的文字，再显示汉化组译文；游戏日文、官方简中、官方繁中均可使用，译文简繁可自行选择。安装一次，以后从桌面入口打开即可自动检查更新。
