@@ -14,7 +14,7 @@ Luna 的基础操作和 OCR 详细设置可参考：[Flamecho《LunaTranslator �
 
 ## 视频教程
 
-[![点击观看 NS 预翻译使用教程，画面为 Luna OCR 识别游戏台词的实机示例](images/05-example-ja.jpg)](https://www.bilibili.com/video/BV1HD1FzMEdo/)
+[![赤红灯火妖魅行 缀 · NS 预翻译使用教程](images/ns-tutorial-cover.webp)](https://www.bilibili.com/video/BV1HD1FzMEdo/)
 
 [▶ 在哔哩哔哩观看《赤灯 NS 预翻译使用教程》](https://www.bilibili.com/video/BV1HD1FzMEdo/)
 
