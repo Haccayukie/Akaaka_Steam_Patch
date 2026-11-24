@@ -12,6 +12,12 @@
 
 Luna 的基础操作和 OCR 详细设置可参考：[Flamecho《LunaTranslator 预翻译文件使用教程》](https://www.flamecho.top/p/pretrans-guide)（侵删）。NS 采集卡投屏请看其中的 **OCR 模式**部分。
 
+## 视频教程
+
+[![点击观看 NS 预翻译使用教程，画面为 Luna OCR 识别游戏台词的实机示例](images/05-example-ja.jpg)](https://www.bilibili.com/video/BV1HD1FzMEdo/)
+
+[▶ 在哔哩哔哩观看《赤灯 NS 预翻译使用教程》](https://www.bilibili.com/video/BV1HD1FzMEdo/)
+
 ## 使用前：先把 NS 画面接到电脑
 
 连接顺序：**NS 底座 → HDMI 线 → 采集卡 → USB 线 → 电脑**。

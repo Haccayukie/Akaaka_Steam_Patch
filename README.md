@@ -70,6 +70,10 @@ PatchData 为安装组件文件夹，请完整保留，无须打开或单独运�
 
 ## Luna OCR：NS 实机采集卡投屏翻译
 
+[![点击观看 NS 预翻译使用教程，画面为 Luna OCR 识别游戏台词的实机示例](luna/images/05-example-ja.jpg)](https://www.bilibili.com/video/BV1HD1FzMEdo/)
+
+[▶ 在哔哩哔哩观看《赤灯 NS 预翻译使用教程》](https://www.bilibili.com/video/BV1HD1FzMEdo/)
+
 进入 **[luna 文件夹 · Luna OCR 安装与使用说明](luna/README.md)**。
 
 NS 主机通过采集卡在电脑上投屏，可配合 OBS 使用。Luna 识别游戏画面中的文字，再显示汉化组译文；游戏日文、官方简中、官方繁中均可使用，译文简繁可自行选择。安装一次，以后从桌面入口打开即可自动检查更新。
